@@ -37,7 +37,7 @@ function fuzzy-search-and-edit() {
     async_job ":fuzzy-search-and-edit:worker" ":fuzzy-search-and-edit:get-files" "$(pwd)" "$fifo"
 
     local match=$(
-        fzf +x --ansi -1 < "$fifo" \
+        fzf --ansi -1 < "$fifo" \
             | :fuzzy-search-and-edit:abort-job
     )
 
